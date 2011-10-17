@@ -1,0 +1,21 @@
+<%= form_for @profesor do |f| %>
+  <div>
+    <%= f.label :nombe %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div>
+    <%= f.label :apellido_paterno %>
+    <%= f.text_field :apellido_paterno %>
+  </div>
+  <div>
+    <%= f.label :apellido_materno %>
+    <%= f.text_field :apellido_materno %>
+  </div>
+  <div>
+    <%= f.label :telefono %>
+    <%= f.text_field :telefono %>
+  </div>
+  <div>
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>

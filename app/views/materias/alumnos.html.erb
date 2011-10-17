@@ -1,0 +1,6 @@
+<% @alumnos.each do |alumno_materia| %>
+  <% alumno = Alumno.find(alumno_materia.alumno_id) %>
+<div>
+  <%= alumno.nombre %>
+</div>
+<% end %>

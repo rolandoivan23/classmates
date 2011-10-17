@@ -1,0 +1,39 @@
+<%= form_for @alumno do |f| %>
+  <div>
+    <%= f.label :matricula %>
+    <%= f.text_field :matricula %>
+  </div>
+  <div>
+    <%= f.label :nombe %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div>
+    <%= f.label :apellido_paterno %>
+    <%= f.text_field :apellido_paterno %>
+  </div>
+  <div>
+    <%= f.label :apellido_materno %>
+    <%= f.text_field :apellido_materno %>
+  </div>
+  <div>
+    <%= f.label :grado %>
+    <%= f.text_field :grado %>
+  </div>
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>

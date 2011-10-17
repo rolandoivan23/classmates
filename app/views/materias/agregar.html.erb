@@ -1,0 +1,16 @@
+<h1>Agregar Materias </h1><br />
+
+<%= form_for(@materias, :url => agregar_materias_url, :method => :post) do |f| %>
+<% x= 1 %>
+<% @materias.each do |materia| %>
+<div style="margin: 15px;">
+   <%= materia.nombre %>
+   <%= check_box_tag(x) %>
+    <% x=x+1 %>
+  </div>
+<% end %>
+<div style="margin: 10px">
+<%= submit_tag("aceptar") %>
+  </div>
+
+<% end %>

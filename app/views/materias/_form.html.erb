@@ -1,0 +1,17 @@
+<%= form_for(@materia, :url => ruta, :method => metodo) do |f| %>
+  <div>
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div>
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div>
+    <%= f.label :semestre %>
+    <%= f.text_field :semestre %>
+  </div>
+  <div>
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>

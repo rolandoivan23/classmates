@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classmates</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id ="struct">
+    
+    <nav class ="round">
+      <ul>
+      <% if current_usuario_session %>
+               <li><%= link_to "Inicio", root_path %></li>
+               <li><%= link_to "Alumnos", alumnos_url %></li>
+               <li><%= link_to "Materias", materias_url %></li>
+               <li><%= link_to "Agregar materia", agregar_url %></li>
+               <li><%= link_to "Mis materias",materias_alumno_url(4) %></li>
+               <li><%= link_to "Cerrar sesion", logout_path, :method => :delete %></li>
+      <% else %>
+               <li><%= link_to "Iniciar sesion", new_usuario_session_path %></li>
+      <% end %>
+       </ul>
+    </nav>
+    <div id ="logo" class="round">
+         <% logo = image_tag("logo.png", :alt => "Classmates", :class => "round") %>
+      <%= link_to logo, root_path %>
+    </div>
+    <% if current_usuario_session %>
+      <div id="datos_usuario">
+            <h3>Usuario Actual: </h3>
+            <span style="width: 200px; margin-right: 30px;"><span style="color: #950097; font-style: oblique; font: bold;">Nombre:</span> <%= self.current_usuario.login %></span>
+            <span style="color: #950097; font-style: oblique; font: bold;">Email:</span> <%= self.current_usuario.email %>
+        
+      </div>
+    <% end %>
+      <%= yield %>
+  </div>
+</body>
+</html>

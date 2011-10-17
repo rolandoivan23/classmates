@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+
+
+body{
+    background-color: darkgrey;
+   
+    color: #ffffff;
+    background-repeat: no-repeat;
+}
+
+#datos_usuario{
+    width: 700px;
+  background-color: #d3d3d3;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #950097;
+  border-right: none;
+  border-bottom: 1px solid #950097;
+  border-radius-topright: 10px;
+  border-radius-bottomright: 10px;
+  -moz-border-radius-topright: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  box-shadow: -2px 2px 3px #950097;
+  -webkit-box-shadow: -2px 2px 3px #950097;
+  -moz-box-shadow: -2px 2px 3px #950097;
+}
+
+#struct{
+    margin-left: 250px;
+     background-image: url("fondo.jpeg");
+     width: 800px;
+     padding: 15px;
+     padding-left: 30px;
+     height: 1000px;
+}
+
+#logo{
+    width: 220px;
+    height: 175px;
+    background-image: url("logo.png");
+}
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+#mats a{
+    color: #f00;
+}
+
+/* Navigation */
+
+
+
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+  float: right;
+  font-size: 11px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}

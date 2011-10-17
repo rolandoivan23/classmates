@@ -1,0 +1,10 @@
+<h1>Alumnos registrados</h1>
+<% @alumnos.each do |alumno| %>
+<div style="margin: 15px">
+  Matricula: <%= alumno.matricula %><br/>
+  Nombre: <%= alumno.nombre %><br/>
+  Apellido paterno: <%= alumno.apellido_paterno %><br/>
+  Apellido materno: <%= alumno.apellido_materno %><br/>
+  Semestre: <%= alumno.grado %>
+</div>
+<% end %>

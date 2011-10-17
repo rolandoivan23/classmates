@@ -1,0 +1,10 @@
+<h1>Materias del sistema</h1>
+<% @materias.each do |materia| %>
+<div id ="mats" style="margin: 15px">
+
+  Nombre: <%= materia.nombre %><br/>
+  Descripcion: <%= materia.descripcion %><br/>
+  Semestre: <%= materia.semestre %><br/>
+  <%= link_to "Ver alumnos", materia_alumnos_url(materia.id)%>
+</div>
+<% end %>

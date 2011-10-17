@@ -1,0 +1,21 @@
+<%= form_for @grupo do |f| %>
+  <div>
+    <%= f.label :clave %>
+    <%= f.text_field :clave %>
+  </div>
+  <div>
+    <%= f.label :materia_id, 'Materia id' %>
+    <%= f.text_field :materia_id %>
+  </div>
+  <div>
+    <%= f.label :profesor_id, 'Profesor id' %>
+    <%= f.text_field :profesor_id %>
+  </div>
+<div>
+    <%= f.label :cupo_maximo %>
+    <%= f.text_field :cupo_maximo %>
+  </div>
+  <div>
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>
