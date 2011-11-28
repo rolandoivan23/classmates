@@ -27,4 +27,8 @@ Classmates::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+   config.gem "authlogic-oid", :lib => "authlogic_openid"
+
+  Paperclip.options[:command_path] = "/usr/bin/convert"
 end

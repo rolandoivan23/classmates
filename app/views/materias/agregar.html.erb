@@ -3,11 +3,16 @@
 <%= form_for(@materias, :url => agregar_materias_url, :method => :post) do |f| %>
 <% x= 1 %>
 <% @materias.each do |materia| %>
-<div style="margin: 15px;">
-   <%= materia.nombre %>
-   <%= check_box_tag(x) %>
-    <% x=x+1 %>
+  <% unless @materias_usuario.include? materia %>
+<div class="clearfix">
+  <label ><%= materia.nombre %></label>
+  <div class="input"><%= check_box_tag(x) %>
+    <span class="help-block"><%= materia.descripcion %></span>
   </div>
+  
+        <% x=x+1 %>
+      </div>
+<% end %>
 <% end %>
 <div style="margin: 10px">
 <%= submit_tag("aceptar") %>

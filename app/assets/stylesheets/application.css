@@ -10,12 +10,13 @@
 
 body{
     background-color: darkgrey;
-   
+   background-image: url("fondo.jpeg");
     color: #ffffff;
-    background-repeat: no-repeat;
+
 }
 
 #datos_usuario{
+    
     width: 700px;
   background-color: #d3d3d3;
   padding: 10px;
@@ -36,8 +37,8 @@ body{
 }
 
 #struct{
-    margin-left: 250px;
-     background-image: url("fondo.jpeg");
+    margin: auto;
+     background: #f9f9f9;
      width: 800px;
      padding: 15px;
      padding-left: 30px;
@@ -45,14 +46,21 @@ body{
 }
 
 #logo{
-    width: 220px;
+    width: 7750px;
     height: 175px;
-    background-image: url("logo.png");
+    background-image: url("logo2.jpg");
+    background-repeat: no-repeat;
 }
 
 a {
-  color: #09c;
+  color: red;
   text-decoration: none;
+}
+
+img .round {
+    width: 500px;
+    height: 175px;
+    margin-bottom: 50px;
 }
 
 a:hover {
@@ -61,7 +69,7 @@ a:hover {
 }
 
 a:visited {
-  color: #069;
+  color: darkred;
 }
 
 #mats a{
@@ -108,4 +116,82 @@ nav ul li a:hover {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+
+fieldset .actions{
+    margin-left: 50px;
+    margin-top: 18px;
+}
+
+fieldset .inputs{
+    margin-right: 30px;
+}
+
+.elemento{
+    margin: 5px 0 5px 20px;
+}
+
+.elemento2{
+    margin : 12px;
+    margin-left: 20px;
+}
+
+#div-post{
+    width: 400px;
+    height: auto;
+
+    float: right;
+    padding: 7px;
+    color :crimson;
+}
+
+.posts {
+    background-color: blanchedalmond;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 162px;
+    padding-left: 13px;
+    padding-top: 12px;
+}
+
+.tr{
+    margin : 15px;
+    margin-bottom: 28px;
+}
+
+.encabezados{
+    width: 700px;
+    height: 35px;
+    background-color: aliceblue;
+    color: navy;
+    margin-bottom: 35px;
+}
+
+#mats{
+     background-color: blanchedalmond;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    padding-left: 13px;
+    padding-top: 12px;
+    width: 680px;
+    color: saddlebrown
+}
+
+#mats2{
+     background-color: blanchedalmond;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    padding-left: 13px;
+    padding-top: 12px;
+    width: 380px;
+    color: saddlebrown
+}
+
+
+#titulo{
+    color: beige;
+    margin-left: 500px;
 }

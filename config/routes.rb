@@ -1,5 +1,9 @@
 Classmates::Application.routes.draw do
 
+  get "posts/:id" => "posts#show", :as => :show_post
+  get "posts/new/:usuario_id" => "posts#new", :as => :nuevo_post
+  post "posts/crear/:usuario_id" => "posts#create", :as => :crear_post
+
   get "inicio/index"
 
   resources :alumnos
@@ -8,7 +12,7 @@ Classmates::Application.routes.draw do
 
   get "materias/agregar" => "materias#agregar", :as => :agregar
 
-  get "materias/:id/alumnos" => "materias#alumnos", :as => :materia_alumnos
+  get "materias/:id/usuarios" => "materias#usuarios", :as => :materia_usuarios
 
   post "materias/agregar_materias" => "materias#agregar_materias", :as => :agregar_materias
 

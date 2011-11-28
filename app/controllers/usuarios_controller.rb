@@ -1,11 +1,18 @@
 class UsuariosController < ApplicationController
   
   def index
-    @usuarios = Usuario.all
+    @usuarios = Usuario.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
     @usuario = Usuario.find(params[:id])
+    if @usuario.post_pendientes == 0
+      @pr_pg = 3
+    else
+      @pr_pg = 2
+    end
+    @posts = current_usuario.posts.paginate(:page => params[:page], :per_page => @pr_pg)
+    @post_pendientes = Usuario.find(current_usuario.id).post_pendientes
   end
 
   def new
@@ -13,14 +20,17 @@ class UsuariosController < ApplicationController
   end
 
   def create
-    @usuario = Usuario.new(params[:usuario])
+     @usuario = Usuario.create(params[:usuario])
     if params[:admin] == "1"
       @usuario.add_role 'admin'
     end
-    if @usuario.save
-      redirect_to @usuario
-    else
-      render 'new'
+
+    @usuario.save do |result|
+      if result
+        redirect_to usuarios_url
+      else
+        render 'new'
+      end
     end
   end
 
@@ -36,7 +46,7 @@ class UsuariosController < ApplicationController
         format.json { head :ok }
       else
         format.html { render :action=> "edit" }
-        format.json { render json=> @user.errors, status=> :unprocessable_entity }
+        format.json { render json=> @usuario.errors, status=> :unprocessable_entity }
       end
     end
   end

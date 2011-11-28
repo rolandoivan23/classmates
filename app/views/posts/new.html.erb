@@ -1,0 +1,7 @@
+<%= form_for(@post, :url => crear_post_url(@usuario_id), :method => :post) do |f|%>
+
+  <%= f.text_area :texto %><br/>
+
+  <%= f.submit :Publicar %>
+
+<% end %>

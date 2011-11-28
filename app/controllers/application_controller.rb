@@ -1,8 +1,8 @@
-
+require 'will_paginate/array'
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_usuario_session, :current_usuario
+  helper_method :current_usuario_session, :current_usuario, :administrador?
 
   protected
   def current_usuario_session

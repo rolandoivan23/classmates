@@ -1,3 +1,18 @@
 // Place all the styles related to the inicio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.signup_button {
+  margin-left: 260px;
+  margin-right: 125px;
+  margin-top: 70px;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+  float: left;
+}

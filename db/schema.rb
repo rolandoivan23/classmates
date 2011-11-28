@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009030945) do
+ActiveRecord::Schema.define(:version => 20111122060944) do
 
   create_table "alumno_materias", :force => true do |t|
     t.datetime "created_at"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20111009030945) do
     t.datetime "updated_at"
   end
 
+  create_table "posts", :force => true do |t|
+    t.integer  "usuario_id"
+    t.integer  "usuario_post"
+    t.string   "texto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "pendiente"
+  end
+
   create_table "profesores", :force => true do |t|
     t.string   "nombre"
     t.string   "apellido_paterno"
@@ -73,15 +82,15 @@ ActiveRecord::Schema.define(:version => 20111009030945) do
   end
 
   create_table "usuarios", :force => true do |t|
-    t.string   "login",               :limit => 100
+    t.string   "login"
     t.string   "nombre",              :limit => 100
     t.string   "apellido_paterno",    :limit => 100
     t.string   "apellido_materno",    :limit => 100
     t.date     "fecha_alta",                         :default => '2011-09-28'
     t.string   "email",               :limit => 100
     t.string   "persistence_token",                                            :null => false
-    t.string   "crypted_password",                                             :null => false
-    t.string   "password_salt",                                                :null => false
+    t.string   "crypted_password"
+    t.string   "password_salt"
     t.string   "single_access_token",                                          :null => false
     t.string   "perishable_token",                                             :null => false
     t.integer  "login_count",                        :default => 0,            :null => false
@@ -97,6 +106,13 @@ ActiveRecord::Schema.define(:version => 20111009030945) do
     t.string   "matricula"
     t.integer  "grado"
     t.integer  "post_pendientes"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "openid_identifier"
   end
+
+  add_index "usuarios", ["openid_identifier"], :name => "index_usuarios_on_openid_identifier"
 
 end

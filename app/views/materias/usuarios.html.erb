@@ -1,0 +1,7 @@
+<% @alumnos.each do |alumno_materia| %>
+  <% alumno = Usuario.find(alumno_materia.alumno_id) %>
+<div>
+  <%= alumno.login %>
+  <%= link_to "Crear Post", nuevo_post_url(alumno.id)  %>
+</div>
+<% end %>

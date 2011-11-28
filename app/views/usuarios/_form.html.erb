@@ -36,16 +36,27 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
+  
+         <div class="field">
+          Administrador
+          <%= check_box_tag(:admin) %><br />
+        </div>
+  
 
-   <div class="field">
-    Administrador
-    <%= check_box_tag(:admin) %><br />
 
+  <div>
+   <%= f.file_field :avatar, :class => "btn " %>
+    </div>
+
+  <div>
+    <%= f.label :openid_identifier, "Url de openid" %><br/>
+    <%= f.text_field :openid_identifier %>
   </div>
 
 
+
   <div class="actions">
-    <%= f.submit 'Guardar'%>
+    <%= f.submit 'Guardar', :class => "btn primary"%>
   </div>
 </fieldset>
 <% end %>

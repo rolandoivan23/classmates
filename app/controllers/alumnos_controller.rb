@@ -30,6 +30,6 @@ class AlumnosController < ApplicationController
   end
 
   def materias
-    @materias_alumno = Alumno.find(4).materias
+    @materias_alumno = current_usuario.materias.paginate(:page => params[:page], :per_page => 3)
   end
 end

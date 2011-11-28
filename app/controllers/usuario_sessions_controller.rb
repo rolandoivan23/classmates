@@ -7,11 +7,15 @@ class UsuarioSessionsController < ApplicationController
 
   def create
     @usuario_session = UsuarioSession.new(params[:usuario_session])
-
-    if @usuario_session.save
-      redirect_to current_usuario
+   
+    @usuario_session.save do |result|
+    if result
+      
+       redirect_to current_usuario
     else
+    
       render :action => :new
+    end
     end
   end
 
@@ -21,4 +25,6 @@ class UsuarioSessionsController < ApplicationController
     redirect_to new_usuario_session_path
   end
 
-end
+  end
+
+

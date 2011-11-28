@@ -1,7 +1,33 @@
-<div>
-  <%= @usuario.login %>
-  <%= @usuario.apellido_paterno %>
-  <%= @usuario.apellido_materno %>
-  <%= @usuario.email %>
-  <%= @usuario.fecha_alta %>
+<div >
+<div id="div-post">
+ 
+      <% if @post_pendientes.size > 0 %>
+        <h1>Tienes <%= @post_pendientes %> posts pendientes  </h1>
+      <% end %>
+       
+
+  <% if @posts.size >  0%>
+    <% @posts.each do |post|%>
+    <div class="posts round">
+        Usuario creador:<div class="elemento2"><%= post.usuario.login %></div>
+        Texto:<div class="elemento2"><%= post.texto %></div>
+        <%= link_to "Ver post", show_post_url(post) %>
+      </div>
+    <% end %>
+    <%= will_paginate @posts %>
+  <% else %>
+        <div style="font-size: 45px; color: black;">
+          Aun no tienes post
+        </div>
+  <% end %>
+</div>
+  <div ><%= image_tag @usuario.avatar.url(:medium) %></div>
+
+
+
+  <h3>Nombre:</h3> <div class="elemento"><%= @usuario.login %></div>
+  <h3>Apellido paterno:</h3><div class="elemento"><%= @usuario.apellido_paterno %></div>
+  <h3>Apellido materno:</h3><div class="elemento"><%= @usuario.apellido_materno %></div>
+  <h3>Email:</h3><div class="elemento"><%= @usuario.email %></div>
+  <h3>Fecha registro:</h3><div class="elemento"><%= @usuario.fecha_alta %></div>
 </div>

@@ -1,10 +1,14 @@
 <h1>Materias del sistema</h1>
+
+<div><%= link_to 'Registrar nueva materia', new_materia_url %></div>
 <% @materias.each do |materia| %>
-<div id ="mats" style="margin: 15px">
+<div id ="mats" class="round" style="margin: 15px">
 
   Nombre: <%= materia.nombre %><br/>
   Descripcion: <%= materia.descripcion %><br/>
-  Semestre: <%= materia.semestre %><br/>
-  <%= link_to "Ver alumnos", materia_alumnos_url(materia.id)%>
+  Semestre: <%= materia.semestre %><br/><br/>
+  <%= link_to "Ver usuarios registrados", materia_usuarios_url(materia.id)%><br/><br/>
+  <%= link_to "Eliminar materia", materia_url(materia), :confirm => "Estas seguro?", :method => :delete %>
 </div>
 <% end %>
+<%= will_paginate @materias %>

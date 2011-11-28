@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  usuario_id: 
+  usuario_post: 
+  texto: 
+  pendiente: false
+
+two:
+  usuario_id: 
+  usuario_post: 
+  texto: 
+  pendiente: false

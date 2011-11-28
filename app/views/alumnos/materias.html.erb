@@ -1,7 +1,12 @@
 <% @materias_alumno.each do |materia_alumno| %>
   <% materia = Materia.find(materia_alumno.materia_id) %>
-<div style="margin: 15px;">
-  Nombre materia: <%= materia.nombre %><br/>
-  Semestre: <%= materia.semestre %>
+<div id="mats2" class="round">
+  Nombre materia: <div class="help-block"><%= materia.nombre %></div>
+  Semestre: <div class="help-block"><%= materia.semestre %></div>
+  Descripcion: <div class="help-block"><%= materia.descripcion %></div>
 </div>
 <% end %>
+
+<div class="pagination">
+  <%= will_paginate @materias_alumno %>
+</div>
